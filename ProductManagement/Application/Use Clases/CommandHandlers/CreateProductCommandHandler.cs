@@ -3,7 +3,6 @@ using Application.Use_Clases.Commands;
 using AutoMapper;
 using Domain;
 using Domain.Repositories;
-using FluentValidation;
 using MediatR;
 
 namespace Application.Use_Clases.CommandHandlers;

@@ -17,7 +17,6 @@ public static class DependencyInjection
                 b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
         services.AddScoped<IProductRepository, ProductRepository>();
-
         return services;
     }
 }

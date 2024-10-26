@@ -1,4 +1,5 @@
 using Application.DTOs;
+using Application.Use_Clases.Commands;
 using AutoMapper;
 using Domain;
 
@@ -8,7 +9,8 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        CreateMap<Product, ProductDto>();
-        CreateMap<ProductDto, Product>();
+        CreateMap<Product, ProductDto>().ReverseMap();
+        CreateMap<CreateProductCommand, Product>().ReverseMap();
+        CreateMap<UpdateProductCommand, Product>().ReverseMap();
     }
 }

@@ -1,12 +1,13 @@
-using System.Data;
 using FluentValidation;
 
 namespace Application.Use_Clases.Commands;
 
-public class CreateProductCommandValidator : AbstractValidator<CreateProductCommand>
+public class UpdateProductCommandValidator : AbstractValidator<UpdateProductCommand>
 {
-    public CreateProductCommandValidator()
+    public UpdateProductCommandValidator()
     {
+        RuleFor(x => x.Id)
+            .NotEmpty().WithMessage("Id is required");
         RuleFor(x => x.Name)
             .NotEmpty().WithMessage("Name is required")
             .MaximumLength(100).WithMessage("Name must not exceed 100 characters");
